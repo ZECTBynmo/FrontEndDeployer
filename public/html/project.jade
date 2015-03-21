@@ -1,0 +1,47 @@
+.col-sm-12
+    .row.project-top-row
+        .deploy-project-name-header.col-sm-9
+            a(href="http://github.com/ZECTBynmo/#{locals.project.repo}")
+                h1.project-details-heading #{locals.project.name}
+
+        .dangerous-controls-container.col-sm-3
+            .dangerous-controls
+                h2 DANGER!
+                button.btn.delete-project-button(title="This will take down any pages referencing this project, but won't delete code or anything") Delete Project
+
+    .row
+        .high-level-summary.col-sm-12
+            h1 Currently: #{locals.project.deployed_version || "Not Deployed"}
+
+        .deploy-controls-housing.col-sm-12
+
+.row.project-preview-container.col-sm-12
+    h1 Preview
+    iframe.project-preview-iframe(src="preview/#{locals.project.name}")
+        p Your browser does not support iframes
+
+.row.project-release-table-container.col-sm-12
+        //a(target="_blank", href="http://github.com/ZECTBynmo/#{locals.project.name}/releases")
+            h2 Releases
+
+        table.table-striped.table.project-release-table
+            thead
+                tr
+                    th Version string
+                    th Created on
+                    th Author
+                    th Branch
+
+            tbody
+                each release in locals.project.releases
+                    tr
+                        th
+                            a(target="_blank", href="http://github.com/ZECTBynmo/#{locals.project.repo}/releases/tag/#{release.tag_name}")
+                                h4 #{release.tag_name}
+                        th
+                            h4 #{release.createdAt}
+                        th
+                            a(target="_blank", href="http://github.com/#{release.author?release.author.login:null")
+                                h4 #{release.author? release.author.login:null}
+                        th
+                            h4 #{release.target_commitish}

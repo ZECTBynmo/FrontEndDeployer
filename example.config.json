@@ -1,0 +1,6 @@
+{
+    "auth": {
+        "token": "your_github_token",
+        "mongo": "mongo_uri"
+    }
+}

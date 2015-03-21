@@ -1,0 +1,1 @@
+web: component install && webpack -p --colors --devtool sourcemap --hot && node server.js 

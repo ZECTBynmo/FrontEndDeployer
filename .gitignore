@@ -1,0 +1,8 @@
+node_modules/
+components/
+deploys/
+assets/
+npm-debug.log
+records.json
+leto_params.json
+.DS_STORE

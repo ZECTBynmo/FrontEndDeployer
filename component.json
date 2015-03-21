@@ -1,0 +1,21 @@
+{
+  "name": "FrontEndDeployer",
+  "version": "0.0.0",
+  "dependencies": {
+    "components/bootstrap": "*",
+    "components/underscore": "*",
+    "component/selectable": "*",
+    "components/backbone": "*",
+    "virtru-components/q": "*",
+    "components/jquery": "*",
+    "component/tip": "*",
+    "guille/ms.js": "*"
+  },
+  "remotes": [
+    "https://user:pass@raw.github.com/"
+  ],
+  "styles": [
+    "public/styles/index.less"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,17 @@
+h1.projects-overview-heading Projects overview
+
+.project-detail-list
+	.row.project-summary-row
+		console.log("test")
+			each project in locals.projects
+				div.col-xs-12.col-sm-offset-2.col-sm-8
+					a(href="#project/#{project.name}")
+						ul.event-list
+							li
+								time
+									span.build-count #{project.releases.length}
+									span.builds-title Tags
+								
+								.project-summary-container
+									h1.project-summary-name #{project.name}
+									h2.project-summary-current-version Current Version: #{project.deployed_version || "Not Deployed"}

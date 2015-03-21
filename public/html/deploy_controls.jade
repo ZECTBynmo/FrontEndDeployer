@@ -1,0 +1,8 @@
+.deploy-controls-container.col-sm-6
+    h3 Deploy a different version
+
+    select.deploy-version-select.form-control.selectpicker.col-sm-12(data-style="btn-primary")
+        each release in locals.project.releases
+            option #{release.tag_name}
+
+    button.btn.btn-lg.deploy-button Deploy

@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - "0.10"
+before_script:
+  - "component install && webpack -p --progress --colors --devtool sourcemap --hot"
+notifications:
+  email: false
+before_deploy: "zip -r build /home/travis/build/ZECTBynmo/FrontEndDeployer/assets"
+deploy:
+  provider: releases
+  api-key: "your travis api key"
+  file: "build.zip"
+  skip_cleanup: true
+  on:
+    tags: true
+    all_branches: true
